@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+float calcular_media(int numeros[], int tamanho) {
+    float soma = 0.0;  // Usar float para evitar overflow
+    
+    for(int i = 0; i < tamanho; i++) {
+        soma += numeros[i];
+    }
+    
+    return soma / tamanho;  // tamanho já será convertido para float automaticamente
+}
+
+int main() {
+    int numeros[] = {10, 20, 30, 40, 50};
+    int tamanho = sizeof(numeros) / sizeof(numeros[0]);
+    
+    float media = calcular_media(numeros, tamanho);
+    
+    printf("A média é: %.2f\n", media);
+    
+    return 0;
+}
